@@ -17,3 +17,11 @@
   margin-bottom: 10px;
   overflow-y: scroll;
 }
+
+.card {
+  cursor: move;
+}
+
+.card.over {
+  border: 2px dashed #000;
+}

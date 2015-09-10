@@ -5,6 +5,7 @@ block head
 
 block defer
     script(src="/javascripts/project.js")
+    script(src="/javascripts/card.js")
 
 block content
     h1= title
@@ -20,9 +21,9 @@ block content
                         h5 #{list}
                     article
                         each i in [1, 2, 3, 4, 5]
-                            .thumbnail(draggable="true")
+                            .card.thumbnail(draggable="true" id="#{i}")
                                 .caption
                                     h3 Title #{i}
-                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    p #{i} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     p
                         button.btn.btn-default.btn-xs Add card
