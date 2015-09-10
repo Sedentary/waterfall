@@ -11,6 +11,7 @@
   background-color: #666;
   margin-right: 20px;
   width: 250px;
+  height: 100%;
 }
 
 .list article {
@@ -20,6 +21,7 @@
 
 .card {
   cursor: move;
+  min-height: 50px;
 }
 
 .card.over {

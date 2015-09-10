@@ -16,7 +16,12 @@
 
       articles = [].slice.call(articles);
       articles.forEach(function (article) {
-        article.style.height = height + 'px';
+        var cardHeight = 10;
+        [].forEach.call(article.querySelectorAll('.card'), function (card) {
+          cardHeight += card.getBoundingClientRect().height;
+        })
+
+        article.style.height = (height < cardHeight ? height : cardHeight) + 'px';
       });
     };
 
@@ -30,6 +35,7 @@
 
   })();
 
+  window.project = project;
   project.init();
 
 })(window, document, jQuery);
