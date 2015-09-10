@@ -12,16 +12,17 @@ block content
 
     - var lists = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
 
-    .row.list-wrapper
-        each list in lists
-            section.col-md-3.list
-                header
-                    h5 #{list}
-                article
-                    each i in [1, 2, 3, 4, 5]
-                        .thumbnail(draggable="true")
-                            .caption
-                                h3 Title #{i}
-                                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                p
-                    button.btn.btn-default.btn-xs Add card
+    .row.wrapper
+        .list-wrapper
+            each list in lists
+                section.col-md-3.list
+                    header
+                        h5 #{list}
+                    article
+                        each i in [1, 2, 3, 4, 5]
+                            .thumbnail(draggable="true")
+                                .caption
+                                    h3 Title #{i}
+                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    p
+                        button.btn.btn-default.btn-xs Add card

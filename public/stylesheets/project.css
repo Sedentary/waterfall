@@ -1,3 +1,7 @@
+.wrapper {
+  overflow-x: auto;
+}
+
 .list-wrapper {
   display: inline-flex;
   margin-left: 20px;

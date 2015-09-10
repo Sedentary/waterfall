@@ -6,8 +6,11 @@
 
     var _maxHeight = function () {
       var height = $(window).height();
-      var listWrapper = document.querySelector('.list-wrapper');
+      var wrapper = document.querySelector('.wrapper');
+      var listWrapper = wrapper.querySelector('.list-wrapper');
       var articles = listWrapper.querySelectorAll('.list article');
+
+      wrapper.style.width = $(window).width() + 'px';
 
       height = height - listWrapper.getBoundingClientRect().top - 100;
 
