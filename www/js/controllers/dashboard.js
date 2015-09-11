@@ -28,8 +28,9 @@ angular.module('waterfall.controllers')
       $scope.models.lists.I.push({label: "Item I" + i});
     }
 
-    // Model to JSON for demo purpose
-    $scope.$watch('models', function (model) {
-      $scope.modelAsJson = angular.toJson(model, true);
-    }, true);
+    $scope.addCard = function (list) {
+      var now = new Date().getTime();
+      list.push({label: "Item " + now + i});
+    };
+
   });
