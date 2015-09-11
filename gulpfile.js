@@ -6,6 +6,7 @@ const sh = require('shelljs');
 const inject = require('gulp-inject');
 const jade = require('gulp-jade');
 const runSequence = require('run-sequence');
+const serve = require('gulp-serve');
 
 const paths = {
     jade: ['./jade/**/*.jade'],
@@ -45,6 +46,8 @@ gulp.task('watch', () => {
         paths.css
     ], ['index']);
 });
+
+gulp.task('serve', serve('www'));
 
 gulp.task('install', ['git-check']);
 
