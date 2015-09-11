@@ -6,15 +6,16 @@ angular.module('waterfall.services', []);
 
 // App
 angular.module('waterfall', [
-    'ngRoute',
-    'waterfall.controllers',
-    'waterfall.services'
+  'ngRoute',
+  'dndLists',
+  'waterfall.controllers',
+  'waterfall.services'
 ])
-    .config(function ($routeProvider) {
-        $routeProvider.when('/dashboard', {
-            templateUrl: 'templates/dashboard.html',
-            controller: 'DashboardCtrl'
-        });
-
-        $routeProvider.otherwise({redirectTo: '/dashboard'});
+  .config(function ($routeProvider) {
+    $routeProvider.when('/dashboard', {
+      templateUrl: 'templates/dashboard.html',
+      controller: 'DashboardCtrl'
     });
+
+    $routeProvider.otherwise({redirectTo: '/dashboard'});
+  });

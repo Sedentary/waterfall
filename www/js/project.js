@@ -1,4 +1,5 @@
-;(function (window, document, $, undefined) {
+;
+(function (window, document, $, undefined) {
 
   'use strict';
 
@@ -19,7 +20,7 @@
         var cardHeight = 10;
         [].forEach.call(article.querySelectorAll('.card'), function (card) {
           cardHeight += card.getBoundingClientRect().height;
-        })
+        });
 
         article.style.height = (height < cardHeight ? height : cardHeight) + 'px';
       });
@@ -27,7 +28,7 @@
 
     return {
 
-      init : function () {
+      init: function () {
         _maxHeight();
       }
 
