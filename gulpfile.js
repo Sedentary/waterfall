@@ -49,7 +49,7 @@ gulp.task('watch', () => {
   ], ['index']);
 });
 
-gulp.task('serve', () => {
+gulp.task('serve', ['build'], () => {
   gulp.src('www')
     .pipe(webserver({
       livereload: true,
