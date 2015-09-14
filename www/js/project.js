@@ -13,7 +13,7 @@
 
       wrapper.style.width = $(window).width() + 'px';
 
-      height = height - listWrapper.getBoundingClientRect().top - 100;
+      height = height - listWrapper.getBoundingClientRect().top;
 
       articles = [].slice.call(articles);
       articles.forEach(function (article) {
