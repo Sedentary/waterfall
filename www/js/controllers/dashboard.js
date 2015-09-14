@@ -30,8 +30,7 @@ angular.module('waterfall.controllers')
     }
 
     $scope.addCard = function (list) {
-      var now = new Date().getTime();
-      list.push({title: 'Title ' + now, label: "Item " + now});
+      list.push({title: '', label: ''});
     };
 
     $scope.$watch('models.lists', function () {
