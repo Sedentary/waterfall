@@ -7,11 +7,11 @@ p Welcome to Waterfall
             header
                 h5 {{listName}}
             article(dnd-list='list', scroll-glue='list.glued')
-                .card.thumbnail(ng-repeat='item in list.list', dnd-draggable='item', dnd-moved='list.splice($index, 1)',
-                        dnd-effect-allowed='move', dnd-selected='models.selected = item',
-                        ng-class="{'selected': models.selected === item}")
+                .card.thumbnail(ng-repeat='card in list', dnd-draggable='card', dnd-moved='list.splice($index, 1)',
+                        dnd-effect-allowed='move', dnd-selected='models.selected = card',
+                        ng-class="{'selected': models.selected === card}", id='{{card.id}}')
                     .caption
-                        h3(contenteditable='true', stripBr='true', ng-model='item.title', placeholder='Title...')
-                        p(contenteditable='true', stripBr='true', ng-model='item.label', placeholder='Description...')
+                        h3(contenteditable='true', stripBr='true', ng-model='card.title', placeholder='Title...')
+                        p(contenteditable='true', stripBr='true', ng-model='card.label', placeholder='Description...')
             p
                 button.btn.btn-default.btn-xs(ng-click='addCard(list)') Add card
