@@ -11,6 +11,8 @@ angular.module('waterfall', [
   'waterfall.controllers',
   'waterfall.services'
 ])
+
+  // Configuration
   .config(function ($routeProvider) {
     $routeProvider.when('/dashboard', {
       templateUrl: 'templates/dashboard.html',

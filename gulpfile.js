@@ -12,7 +12,8 @@ const paths = {
   jade: ['./jade/**/*.jade'],
   javascript: [
     './www/**/*.js',
-    '!./www/js/app.js'
+    '!./www/js/app.js',
+    '!./www/js/directives.js'
   ],
   css: [
     './www/**/*.css'
@@ -42,11 +43,11 @@ gulp.task('jade', done => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(paths.jade, ['jade']);
   gulp.watch([
+    paths.jade,
     paths.javascript,
     paths.css
-  ], ['index']);
+  ], ['build']);
 });
 
 gulp.task('serve', ['build'], () => {

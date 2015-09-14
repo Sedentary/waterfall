@@ -27,3 +27,7 @@
 .card.over {
   border: 2px dashed #000;
 }
+
+.has-placeholder {
+  color: #818181;
+}

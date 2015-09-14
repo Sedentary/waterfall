@@ -3,15 +3,15 @@ p Welcome to Waterfall
 
 .row.wrapper
     .list-wrapper
-        section.col-md-3.list(ng-repeat="(listName, list) in models.lists")
+        section.col-md-3.list(ng-repeat='(listName, list) in models.lists')
             header
                 h5 {{listName}}
             article(dnd-list='list')
-                .card.thumbnail(ng-repeat='item in list' dnd-draggable='item' dnd-moved='list.splice($index, 1)'
-                        dnd-effect-allowed='move' dnd-selected='models.selected = item'
+                .card.thumbnail(ng-repeat='item in list', dnd-draggable='item', dnd-moved='list.splice($index, 1)',
+                        dnd-effect-allowed='move', dnd-selected='models.selected = item',
                         ng-class="{'selected': models.selected === item}")
                     .caption
-                        h3 Title {{item.label}}
-                        p {{item.label}} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        h3(contenteditable='true', stripBr='true', ng-model='item.title', placeholder='Title...')
+                        p(contenteditable='true', stripBr='true', ng-model='item.label', placeholder='Description...')
             p
                 button.btn.btn-default.btn-xs(ng-click='addCard(list)') Add card
