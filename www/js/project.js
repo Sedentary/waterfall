@@ -5,7 +5,7 @@
 
   var project = (function () {
 
-    var _maxHeight = function () {
+    var _setMaxHeight = function () {
       var height = $(window).height();
       var wrapper = document.querySelector('.wrapper');
       var listWrapper = wrapper.querySelector('.list-wrapper');
@@ -27,16 +27,11 @@
     };
 
     return {
-
-      init: function () {
-        _maxHeight();
-      }
-
-    }
+      setMaxHeight: _setMaxHeight
+    };
 
   })();
 
   window.project = project;
-  project.init();
 
 })(window, document, jQuery);

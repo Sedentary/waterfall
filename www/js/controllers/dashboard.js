@@ -1,5 +1,6 @@
 angular.module('waterfall.controllers')
-  .controller('DashboardCtrl', function ($scope, DashboardService) {
+  .controller('DashboardCtrl', function ($scope, $window, $timeout, DashboardService) {
+
     $scope.models = {
       selected: null,
       lists: {
@@ -33,4 +34,9 @@ angular.module('waterfall.controllers')
       list.push({label: "Item " + now + i});
     };
 
+    $scope.$watch('models.lists', function () {
+      $window.project.setMaxHeight();
+    });
+
+    $timeout($window.project.setMaxHeight);
   });

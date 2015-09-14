@@ -2,8 +2,8 @@ h1= title
 p Welcome to Waterfall
 
 .row.wrapper
-    .list-wrapper(ng-repeat="(listName, list) in models.lists")
-        section.col-md-3.list
+    .list-wrapper
+        section.col-md-3.list(ng-repeat="(listName, list) in models.lists")
             header
                 h5 {{listName}}
             article(dnd-list='list')
