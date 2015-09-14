@@ -8,6 +8,7 @@ angular.module('waterfall.services', []);
 angular.module('waterfall', [
   'ngRoute',
   'dndLists',
+  'luegg.directives',
   'waterfall.controllers',
   'waterfall.services'
 ])

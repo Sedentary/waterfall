@@ -6,8 +6,8 @@ p Welcome to Waterfall
         section.col-md-3.list(ng-repeat='(listName, list) in models.lists')
             header
                 h5 {{listName}}
-            article(dnd-list='list')
-                .card.thumbnail(ng-repeat='item in list', dnd-draggable='item', dnd-moved='list.splice($index, 1)',
+            article(dnd-list='list', scroll-glue='list.glued')
+                .card.thumbnail(ng-repeat='item in list.list', dnd-draggable='item', dnd-moved='list.splice($index, 1)',
                         dnd-effect-allowed='move', dnd-selected='models.selected = item',
                         ng-class="{'selected': models.selected === item}")
                     .caption
