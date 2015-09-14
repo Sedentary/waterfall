@@ -19,13 +19,7 @@ angular.module('waterfall')
 
         // Listen for change events to enable binding
         element.on('blur', function () {
-          if (!element.hasClass('has-placeholder')) {
-            scope.$apply(read);
-          } else {
-            if (!element.html()) {
-              scope.$apply(read);
-            }
-          }
+          ngModel.$render();
         });
 
         element.on('keyup change', function () {
@@ -41,13 +35,16 @@ angular.module('waterfall')
         // Write data to the model
         function read() {
           var html = element.html();
+          if (html) {
+            element.removeClass('has-placeholder');
+          }
+
           // When we clear the content editable the browser leaves a <br> behind
           // If strip-br attribute is provided then we strip this out
           if (attrs.stripBr && html == '<br>') {
             html = '';
           }
           ngModel.$setViewValue(html);
-          ngModel.$render();
         }
       }
     };
