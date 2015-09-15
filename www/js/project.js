@@ -1,9 +1,8 @@
-;
-(function (window, document, $, undefined) {
+;(function (window, document, $, undefined) {
 
   'use strict';
 
-  var project = (function () {
+  window.project = (function () {
 
     var _setMaxHeight = function () {
       var height = $(window).height();
@@ -31,7 +30,5 @@
     };
 
   })();
-
-  window.project = project;
 
 })(window, document, jQuery);
