@@ -1,17 +1,10 @@
-h1 Projetos
-p Welcome to Waterfall
+h1 Projects
+p My projects
 
-.row.wrapper
-    .list-wrapper
-        section.col-md-3.list(ng-repeat='(listName, list) in models.lists')
-            header
-                h5 {{listName}}
-            article(dnd-list='list', scroll-glue='list.glued')
-                .card.thumbnail(ng-repeat='card in list', dnd-draggable='card', dnd-moved='list.splice($index, 1)',
-                        dnd-effect-allowed='move', dnd-selected='models.selected = card',
-                        ng-class="{'selected': models.selected === card}", id='{{card.id}}')
-                    .caption
-                        h3(contenteditable='true', stripBr='true', ng-model='card.title', placeholder='Title...')
-                        p(contenteditable='true', stripBr='true', ng-model='card.label', placeholder='Description...')
+.row(ng-repeat='project in projects')
+    .col
+        .jumbotron
+            h1 {{project.name}}
+            p Created at {{project.created_at}}
             p
-                button.btn.btn-default.btn-xs(ng-click='addCard(list)') Add card
+             a.btn.btn-primary.btn-lg(href='#/project/{{project._id}}', role='button') Enter

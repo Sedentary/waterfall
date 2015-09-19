@@ -1,0 +1,20 @@
+h1 Project {{project.name}}
+p Created at {{project.created_at}}
+p Updated at {{project.updated_at}}
+
+h2 Lists
+ button.btn.btn-primary(ng-click='newList()') Create
+.row.wrapper
+    .list-wrapper
+        section.col-md-3.list(ng-repeat='list in project.lists')
+            header
+                h5(contenteditable='true', ng-model='list.name', placeholder='List name...')
+            article(dnd-list='list.cards', scroll-glue='list.glued')
+                .card.thumbnail(ng-repeat='card in list.cards', dnd-draggable='card', dnd-moved='list.cards.splice($index, 1)',
+                        dnd-effect-allowed='move', dnd-selected='models.selected = card',
+                        ng-class="{'selected': models.selected === card}", id='{{card.id}}')
+                    .caption
+                        h3(contenteditable='true', stripBr='true', ng-model='card.title', placeholder='Title...')
+                        p(contenteditable='true', stripBr='true', ng-model='card.label', placeholder='Description...')
+            p
+                button.btn.btn-default.btn-xs(ng-click='addCard(list)') Add card

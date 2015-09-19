@@ -1,4 +1,4 @@
 angular.module('waterfall.services')
-  .factory('DashboardService', function ($http, $log) {
+  .service('DashboardService', function ($http, $log) {
     return {};
   });
