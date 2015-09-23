@@ -1,4 +1,8 @@
 angular.module('waterfall.services')
-  .factory('CardService', function ($resource) {
-    return $resource('');
+  .factory('Card', function ($resource, Util) {
+    return $resource(Util.getApiUrl('card/:id'), {id: '@_id'}, {
+      update: {
+        method: 'PUT'
+      }
+    });
   });

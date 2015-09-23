@@ -1,6 +1,6 @@
 angular.module('waterfall.controllers')
-  .controller('DashboardCtrl', function ($scope, ProjectService) {
-    ProjectService.query(function (projects) {
+  .controller('DashboardCtrl', function ($scope, Project) {
+    Project.query(function (projects) {
       $scope.projects = projects;
     });
 

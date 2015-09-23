@@ -1,6 +1,6 @@
 angular.module('waterfall.services')
-  .service('UtilService', function ($http) {
-    var apiUrl = '//waterfall-api.herokuapp.com/api/v1/';
+  .service('Util', function ($http) {
+    var apiUrl = '//localhost:8080/api/v1/';
 
     return {
       /**
@@ -8,7 +8,7 @@ angular.module('waterfall.services')
        * @param {function} cb
        */
       isApiAlive: function (cb) {
-        $http.get(getApiUrl('index/'))
+        $http.get(this.getApiUrl('index/'))
           .success(cb(true))
           .error(cb(false));
       },
