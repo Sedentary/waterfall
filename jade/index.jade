@@ -11,6 +11,7 @@ head
     title Waterfall BETA
 
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/main.css')
 
     //inject:css
     //endinject
@@ -27,6 +28,22 @@ body
         .container-fluid
             .navbar-header
                 a.navbar-brand(href='#/dashboard') Dashboard
+
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li.dropdown
+                        a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                            span.glyphicon.glyphicon-plus(aria-hidden="true")
+                        ul.dropdown-menu
+                            li
+                                form.project-form(action="/project" method="POST")
+                                    .form-group
+                                        input.form-control(type="text" name="name" placeholder="Project name" required)
+                                    .checkbox
+                                        label
+                                            input(type="checkbox")
+                                            | Private
+                                    button.btn.btn-default(type="submit") Create
 
     .container-fluid(ng-view)
 
