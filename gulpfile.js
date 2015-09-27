@@ -42,7 +42,7 @@ gulp.task('jade', done => {
     .on('end', done);
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['serve'], () => {
   gulp.watch([
     paths.jade,
     paths.javascript,
