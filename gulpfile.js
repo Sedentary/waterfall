@@ -53,8 +53,7 @@ gulp.task('watch', ['serve'], () => {
 gulp.task('serve', ['build'], () => {
   gulp.src('www')
     .pipe(webserver({
-      livereload: true,
-      open: true
+      livereload: true
     }));
 });
 
