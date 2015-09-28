@@ -3,7 +3,7 @@ p Created at {{project.created_at}}
 p Updated at {{project.updated_at}}
 
 h2 Lists
- button.btn.btn-primary(ng-click='newList()') Create
+ button.btn.btn-primary(ng-click='addList()') Create
 .row.wrapper
     .list-wrapper
         section.col-md-3.list(ng-repeat='list in project.lists')

@@ -1,6 +1,6 @@
 angular.module('waterfall.services')
   .service('Util', function ($http) {
-    var apiUrl = '//localhost:8080/api/v1/';
+    var apiUrl = '//localhost:3000/api/v1/';
 
     return {
       /**

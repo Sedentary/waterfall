@@ -1,14 +1,23 @@
 angular.module('waterfall.controllers')
-  .controller('ProjectCtrl', function ($scope, $routeParams, $window, Project, List, Card) {
+  .controller('ProjectCtrl', function ($scope, $rootScope, $routeParams, $window, Project, List, Card) {
+    $scope.project = {};
+
     $scope.loadProject = function () {
       Project.get({id: $routeParams.id}, function (project) {
-        console.log(project);
         $scope.project = project;
       });
     };
     $scope.loadProject();
 
-    $scope.newList = function () {
+    $scope.create = function () {
+      var project = new Project($scope.project);
+      project.users = []; //FIXME user is needed, and we still dont have this information in the scope
+      project.$save(function () {
+        $rootScope.$broadcast('project-created');
+      });
+    };
+
+    $scope.addList = function () {
       var list = new List();
       list.name = 'New List';
       list.project = $scope.project;

@@ -1,8 +1,16 @@
 angular.module('waterfall.controllers')
   .controller('DashboardCtrl', function ($scope, Project) {
-    Project.query(function (projects) {
-      $scope.projects = projects;
+    $scope.loadProjects = function () {
+      Project.query(function (projects) {
+        $scope.projects = projects;
+      });
+    };
+
+    $scope.$on('project-created', function () {
+      $scope.loadProjects();
     });
+
+    $scope.loadProjects();
 
     //$scope.models = {
     //  selected: null,
